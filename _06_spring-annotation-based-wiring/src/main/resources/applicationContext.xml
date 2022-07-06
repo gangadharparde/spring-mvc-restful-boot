@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	 	http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+	<context:annotation-config />
+
+
+	<bean class="com.gd.model.Intel">
+		<property name="modelName" value="Intel i7" />
+		<property name="cacheMemory" value="64MB" />
+		<property name="price" value="6700.00" />
+		<property name="numberOfCores" value="7 Cores" />
+	</bean>
+
+	<bean id="myLaptop" class="com.gd.model.Laptop">
+		<property name="modelName" value="Lenovo Think PagEdge" />
+		<property name="price" value="78900.00" />
+		<!-- @Autowired is used which will add the above intel processor using autowire=byType  -->
+	</bean>
+
+	<bean id="yourLaptop" class="com.gd.model.Laptop">
+		<!-- @Autowired is used which will add the above intel processor using autowire=byType  -->
+	</bean>
+</beans>

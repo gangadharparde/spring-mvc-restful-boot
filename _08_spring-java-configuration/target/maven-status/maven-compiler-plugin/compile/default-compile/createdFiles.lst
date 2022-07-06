@@ -1,0 +1,6 @@
+com\gd\model\Intel.class
+com\gd\client\MainClasss.class
+com\gd\model\Processor.class
+com\gd\model\Laptop.class
+com\gd\config\AppConfig.class
+com\gd\model\Amd.class

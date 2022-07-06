@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- By Name -->
+	<bean id="processor" class="com.gd.model.Intel">
+		<property name="modelName" value="Intel i7" />
+		<property name="cacheMemory" value="64MB" />
+		<property name="price" value="6700.00" />
+		<property name="numberOfCores" value="7 Cores" />
+	</bean>
+
+	<!-- <bean id="chinaMadeProcessor" class="com.gd.model.Intel"> <property 
+		name="modelName" value="Intel i7 (China Made)" /> <property name="cacheMemory" 
+		value="64MB" /> <property name="price" value="6700.00" /> <property name="numberOfCores" 
+		value="7 Cores" /> </bean> -->
+		
+	<bean id="myLaptop" class="com.gd.model.Laptop" autowire="byName">
+		<property name="modelName" value="Lenovo Think PagEdge" />
+		<property name="price" value="78900.00" />
+		<!-- <property name="processor" ref="chinaMadeProcessor" /> -->
+	</bean>
+
+	<!-- autowire="constructor" Uses by default byType internally -->
+	<!-- If there is not exactly one bean of the constructor argument type in 
+		the bean factory, a fatal error is raised. -->
+	<bean id="yourLaptop" class="com.gd.model.Laptop" autowire="constructor">
+		<property name="modelName" value="Mac Book Pro" />
+		<property name="price" value="148000.00" />
+	</bean>
+
+	<!-- autowire="constructor" Uses by default byType internally -->
+	<bean id="wowLaptop" class="com.gd.model.Laptop" autowire="byType">
+		<property name="modelName" value="Alienware" />
+		<property name="price" value="99900.00" />
+	</bean>
+
+</beans>
+

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<!-- Intel intelProcessor= new Intel(); -->
+	<bean id="intelProcessor" class="com.gd.model.Intel">
+		<!-- intelProcessor.setModelName("Intel i7"); -->
+		<property name="modelName">
+			<value>Intel i7</value>
+		</property>
+		<!-- intelProcessor.setCacheMemory("64MB"); -->
+		<property name="cacheMemory" value="64MB" />
+		<!-- intelProcessor.setPrice(); -->
+		<property name="price">
+			<value>6700.00</value>
+		</property>
+		<!-- intelProcessor.setModelName("Intel i7"); -->
+		<property name="numberOfCores" value="7 Cores" />
+	</bean>
+	<!-- Amd amdProcessor= new Amd(); -->
+	<bean id="amdProcessor" class="com.gd.model.Amd">
+		<!-- amdProcessor.setModelName("Intel i7"); -->
+		<property name="modelName">
+			<value>AMD Xenon</value>
+		</property>
+		<!-- amdProcessor.setCacheMemory("128MB"); -->
+		<property name="cacheMemory" value="128MB" />
+		<!-- amdProcessor.setPrice(); -->
+		<property name="price">
+			<value>7700.00</value>
+		</property>
+
+		<!-- amdProcessor.setGraphicsAcceleration(true); -->
+		<property name="graphicsAcceleration" value="true" />
+	</bean>
+
+	<!-- Laptop myLaptop= new Laptop(); -->
+	<bean id="myLaptop" class="com.gd.model.Laptop" >
+	
+		<!-- myLaptop.setModelName("Lenovo Think PagEdge" ); -->
+		<property name="modelName" value="Lenovo Think PagEdge" />
+		
+		<!-- myLaptop.setPrice(78900.00); -->
+		<property name="price" value="78900.00" />
+		
+		<!-- myLaptop.setProcessor(intelProcessor); -->
+		<property name="processor" ref="intelProcessor" />
+	</bean>
+</beans>

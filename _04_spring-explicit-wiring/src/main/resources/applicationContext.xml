@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+	<bean id="intelProcessor" class="com.gd.model.Intel">
+		<property name="modelName" value ="Intel i7"/>
+		<property name="cacheMemory" value="64MB" />
+		<property name="price" value="6700.00"/>
+		<property name="numberOfCores" value="7 Cores" />
+	</bean>
+
+	<bean id="myLaptop" class="com.gd.model.Laptop" autowire="no">
+		<property name="modelName" value="Lenovo Think PagEdge" />
+		<property name="price" value="78900.00" />
+		<property name="processor" ref="intelProcessor" />
+	</bean>
+	
+	<bean id="yourLaptop" class="com.gd.model.Laptop" autowire="no">
+	    <constructor-arg value="Alienware"></constructor-arg>
+		<constructor-arg value="98900.00"></constructor-arg>
+		<constructor-arg ref="intelProcessor" ></constructor-arg>
+	</bean>
+</beans>

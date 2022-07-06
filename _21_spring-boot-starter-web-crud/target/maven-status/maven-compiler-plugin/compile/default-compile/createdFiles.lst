@@ -1,0 +1,5 @@
+com\gd\App.class
+com\gd\controller\ShipwreckStub.class
+com\gd\model\Shipwreck.class
+com\gd\controller\HomeController.class
+com\gd\controller\ShipwreckController.class

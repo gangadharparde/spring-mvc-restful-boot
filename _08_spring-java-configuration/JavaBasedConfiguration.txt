@@ -1,0 +1,33 @@
+Steps for JavaConfig Spring Application
+
+1. Make sure youare using spring-context.4.x.x dependecies
+2. Remove applicationContext.xml
+3. Create com.gd.config package and define AppConfig class
+4. Change Main method code from 
+	-new ClassPathXmlApplicationContext("applicationContext.xml")
+	to
+	-new AnnotationCongifApplicationContext(AppConfig.class)  //please note no double quotes
+5. Add @Configuration at class level on AppConfig as given below-
+	@Configuration
+	public class AppConfig {
+6. Add bean definitions as per guidelines
+	-If required provide bean name
+	-If required add description (Spring 4.0)
+	-As per need decide on Setter or Constructor based injection
+	-If you wan to make beans as hidden (Does not want to expose to client) then make methods on which @Bean annotation is applied as either default or protected
+	
+	@Bean(name = "i7")
+	@Description("This bean is used to injection dependency inside Laptop class")
+	//This bean would be hidden bean
+	protected Intel getIntelProcessor() {
+		return new Intel("Intel i7", "64MB", 6700.0, "7 Cores");
+	}
+7. Call bean suing context.getBean("methodName")
+
+
+
+In case of autodiscovery
+
+After step 5 follow below steps
+5a. Add @ComponentScan(basePackages="com.gd")
+	

@@ -1,0 +1,1 @@
+java -jar -Dserver.port=8080 springboot-jpa-rest-api-endtoend.jar
